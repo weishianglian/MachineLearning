@@ -12,8 +12,11 @@ You will see a graph open displaying the changing gradient of your hypothesis. W
 where x0 is the bias term and is set to 1 for all training examples.  
 
 **Task 1** Modify the function calculate_hypothesis.m to return the predicted value for a single specified training example.  
+
 Include in the report the corresponding lines from your code.  
+
 For example, if the first training example is [1,5] corresponding to [x0, x1], return,  
+
 ![equation 1.2](https://latex.codecogs.com/svg.latex?\LARGE&space;h_\theta(x)=\theta_01&plus;\theta_15)  
 
 When this is completed, run mllab1.m again and you should see the gradient of the hypothesis better fit the model and the cost going down over time. Notice that the hypothesis function is not being used in the gradient_descent function. Modify it to use the calculate_hypothesis function. Include the corresponding lines of the code in your report.  
@@ -27,6 +30,7 @@ Observe what happens when you use a very high or very low learning rate. Documen
 Create a new folder and copy all the files in the new one and start running the programs according to the steps below. In this part, we will be using mllab2.m  
 
 We will now look at linear regression with two variables (three including the bias). The hypothesis function now looks like this:  
+
 ![equation 2.1](https://latex.codecogs.com/svg.latex?\LARGE&space;h_\theta(x)=\theta_0x_0&plus;\theta_1x_1&plus;\theta_2x_2)  
 
 In this exercise, we are looking at house price data. x0 corresponds to the bias, that is it set to 1, x1 is the area of the house in square feet and x2 corresponds to the number of bedrooms. If you open ex1data2.txt you will see there is a large difference between the values of x1 and x2.  
@@ -78,6 +82,7 @@ To attempt to avoid this we will use regularization. Our cost function becomes:
 Next, modify gradient_descent to incorporate the new cost function. Again, we do not want to punish the bias term. This means that we use a different update technique for the partial derivative of 𝜃0, and add the regularization to all of the others:  
 
 ![equation 3.3](https://latex.codecogs.com/svg.latex?\LARGE&space;\theta_0=\theta_0-\alpha\frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x_0^{(i)})  
+
 ![equation 3.4](https://latex.codecogs.com/svg.latex?\LARGE&space;\theta_j=\theta_j(1-\alpha\frac{\lambda}{m})-\alpha\frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)})  
 
 Include the relevant lines of the code in your report.  
